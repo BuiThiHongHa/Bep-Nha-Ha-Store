@@ -1,0 +1,403 @@
+
+/* ==========================================================================
+   Hide redundant table footers (tfoot duplicate headers)
+   ========================================================================== */
+table.dataTable tfoot,
+.table tfoot,
+tfoot {
+    display: none !important;
+}
+/* Fix Page Loader white flash */
+html.theme-dark,
+body.theme-dark,
+html.theme-dark .page-loader-wrapper,
+body.theme-dark .page-loader-wrapper {
+    background: #1a1a27 !important;
+}
+
+html.theme-dark .page-loader-wrapper p,
+body.theme-dark .page-loader-wrapper p {
+    color: #cbd5e1 !important;
+}
+
+/* Optional: hide loader so navigation is instant without flickering */
+.page-loader-wrapper {
+    display: none !important;
+}
+/* ==========================================================================
+   Comprehensive Dark Mode Enhancement for Admin Panel
+   ========================================================================== */
+
+/* Background & Global Typography */
+body.theme-dark {
+    background: #1a1a27 !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark section.content {
+    background: #13131e !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .body_scroll {
+    background: transparent !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark h5,
+body.theme-dark h6,
+body.theme-dark .h1,
+body.theme-dark .h2,
+body.theme-dark .h3,
+body.theme-dark .h4,
+body.theme-dark .h5,
+body.theme-dark .h6 {
+    color: #f8fafc !important;
+}
+
+body.theme-dark p,
+body.theme-dark span:not(.badge):not(.tag),
+body.theme-dark label,
+body.theme-dark li {
+    color: #cbd5e1;
+}
+
+body.theme-dark .text-muted {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark small {
+    color: #94a3b8;
+}
+
+body.theme-dark hr {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Breadcrumbs */
+body.theme-dark .block-header h2 {
+    color: #ffffff !important;
+}
+
+body.theme-dark .breadcrumb {
+    background: transparent !important;
+}
+
+body.theme-dark .breadcrumb-item,
+body.theme-dark .breadcrumb-item a {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark .breadcrumb-item a:hover {
+    color: #60a5fa !important;
+}
+
+body.theme-dark .breadcrumb-item.active {
+    color: #f1f5f9 !important;
+    font-weight: 500;
+}
+
+/* Cards */
+body.theme-dark .card {
+    background: #202030 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .card .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #f8fafc !important;
+}
+
+body.theme-dark .card .header h2,
+body.theme-dark .card .header h2 strong,
+body.theme-dark .card .header h2 small {
+    color: #f8fafc !important;
+}
+
+body.theme-dark .card .header h2 small {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark .card .body {
+    background: #202030 !important;
+    color: #cbd5e1 !important;
+}
+
+/* Tables (fixes black text in table issue) */
+body.theme-dark table,
+body.theme-dark .table {
+    color: #e2e8f0 !important;
+    background: transparent !important;
+}
+
+body.theme-dark .table th {
+    color: #f8fafc !important;
+    background: #26263b !important;
+    border-color: #383852 !important;
+    font-weight: 600;
+}
+
+body.theme-dark .table td {
+    color: #cbd5e1 !important;
+    border-color: #2c2c42 !important;
+    background: transparent !important;
+}
+
+body.theme-dark .table tr:hover td {
+    background-color: #28283e !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .table-striped tbody tr:nth-of-type(odd) td {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.theme-dark .table-bordered,
+body.theme-dark .table-bordered td,
+body.theme-dark .table-bordered th {
+    border-color: #383852 !important;
+}
+
+/* DataTables pagination and search controls */
+body.theme-dark .dataTables_wrapper,
+body.theme-dark .dataTables_info,
+body.theme-dark .dataTables_length,
+body.theme-dark .dataTables_length label,
+body.theme-dark .dataTables_filter,
+body.theme-dark .dataTables_filter label {
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .dataTables_filter input {
+    background: #141420 !important;
+    border: 1px solid #3f3f5a !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+body.theme-dark .dataTables_length select {
+    background: #141420 !important;
+    border: 1px solid #3f3f5a !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+body.theme-dark .page-item .page-link {
+    background: #26263b !important;
+    border-color: #383852 !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .page-item.active .page-link {
+    background: #ec3b57 !important;
+    border-color: #ec3b57 !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .page-item.disabled .page-link {
+    background: #1a1a27 !important;
+    border-color: #2c2c42 !important;
+    color: #64748b !important;
+}
+
+/* Form Controls & Inputs */
+body.theme-dark .form-control {
+    background-color: #141420 !important;
+    border: 1px solid #3f3f5a !important;
+    color: #f8fafc !important;
+}
+
+body.theme-dark .form-control:focus {
+    border-color: #818cf8 !important;
+    background-color: #141420 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.25) !important;
+}
+
+body.theme-dark .input-group-text {
+    background-color: #26263b !important;
+    border: 1px solid #3f3f5a !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark select.form-control,
+body.theme-dark select.form-control option {
+    background-color: #141420 !important;
+    color: #f8fafc !important;
+}
+
+body.theme-dark .bootstrap-select > .dropdown-toggle {
+    background-color: #141420 !important;
+    border: 1px solid #3f3f5a !important;
+    color: #f8fafc !important;
+}
+
+/* Left Sidebar */
+body.theme-dark #leftsidebar {
+    background: #181825 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.theme-dark .sidebar .menu .list a {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark .sidebar .menu .list a:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.theme-dark .sidebar .menu .list li.active > a {
+    color: #ffffff !important;
+    background: rgba(236, 59, 87, 0.15) !important;
+}
+
+body.theme-dark .sidebar .menu .list .ml-menu {
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+body.theme-dark .sidebar .menu .list .ml-menu li a {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark .sidebar .menu .list .ml-menu li a:hover,
+body.theme-dark .sidebar .menu .list .ml-menu li.active a {
+    color: #ffffff !important;
+}
+
+body.theme-dark .sidebar .user-info {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.theme-dark .sidebar .user-info .detail h4 {
+    color: #ffffff !important;
+}
+
+body.theme-dark .sidebar .user-info .detail small {
+    color: #94a3b8 !important;
+}
+
+/* Right Sidebar */
+body.theme-dark #rightsidebar {
+    background: #181825 !important;
+    color: #cbd5e1 !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.theme-dark #rightsidebar .card {
+    background: #1e1e2d !important;
+}
+
+body.theme-dark #rightsidebar h6 {
+    color: #f8fafc !important;
+}
+
+body.theme-dark #rightsidebar label {
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark #rightsidebar .nav-tabs {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.theme-dark #rightsidebar .nav-tabs .nav-link {
+    color: #94a3b8 !important;
+}
+
+body.theme-dark #rightsidebar .nav-tabs .nav-link.active {
+    color: #ffffff !important;
+    background: #1e1e2d !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dropdown & Modals */
+body.theme-dark .dropdown-menu {
+    background: #202030 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.theme-dark .dropdown-item {
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .modal-content {
+    background: #202030 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.theme-dark .modal-header,
+body.theme-dark .modal-footer {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Top Navbar */
+body.theme-dark .navbar-right .navbar-nav > li > a {
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .navbar-right .navbar-nav > li > a:hover {
+    color: #ffffff !important;
+}
+
+/* Login page dark mode */
+body.theme-dark .authentication {
+    background: #13131e !important;
+}
+
+body.theme-dark .authentication .card-plain {
+    background: #202030 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 20px 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .authentication .input-group-text {
+    background: #26263b !important;
+    border-color: #3f3f5a !important;
+    color: #cbd5e1 !important;
+}
+
+body.theme-dark .authentication .form-control {
+    background: #141420 !important;
+    border-color: #3f3f5a !important;
+    color: #ffffff !important;
+}
+
+/* Fix hardcoded yellow background in tables for Dark Mode */
+body.theme-dark tr[style*="background-color: #FFD18E"],
+body.theme-dark tr[style*="background-color:#FFD18E"],
+body.theme-dark tr[style*="background-color: rgb(255, 209, 142)"],
+body.theme-dark tr.status-pending {
+    background-color: rgba(234, 88, 12, 0.2) !important;
+    color: #fdba74 !important;
+}
+
+body.theme-dark tr[style*="background-color: #FFD18E"] td,
+body.theme-dark tr[style*="background-color:#FFD18E"] td,
+body.theme-dark tr[style*="background-color: rgb(255, 209, 142)"] td,
+body.theme-dark tr.status-pending td {
+    background-color: transparent !important;
+    color: #fbd38d !important;
+}
+
+/* Also style light mode cleanly instead of harsh bright yellow */
+tr[style*="background-color: #FFD18E"],
+tr[style*="background-color:#FFD18E"] {
+    background-color: #fff7ed !important;
+}
