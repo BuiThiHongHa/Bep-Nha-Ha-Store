@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Smooth Logo Scaling (Tự động phóng to lại khi cuộn lên hết trang)
+   ========================================================================== */
+#header .logo img {
+    transition: width 0.25s ease-in-out, height 0.25s ease-in-out, max-height 0.25s ease-in-out !important;
+    display: block !important;
+}
+
+/* Khi cuộn lên hết trang (không còn sticky): Tự động to ra kích thước ban đầu */
+body:not(.sticky-menu-active) #header .logo img {
+    width: 180px !important;
+    height: 56px !important;
+    max-height: 56px !important;
+}
+
+/* Khi cuộn chuột xuống dưới (thanh menu dính vào mép trên): Thu nhỏ gọn gàng */
+body.sticky-menu-active #header .logo img {
+    width: 135px !important;
+    height: 42px !important;
+    max-height: 42px !important;
+}

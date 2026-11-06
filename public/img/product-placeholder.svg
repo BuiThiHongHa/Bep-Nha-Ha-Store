@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <circle cx="400" cy="360" r="120" fill="#cbd5e1" opacity="0.6"/>
+  <path d="M340 380 L380 330 L420 370 L450 340 L480 380 Z" fill="#94a3b8"/>
+  <circle cx="370" cy="310" r="18" fill="#94a3b8"/>
+  <text x="400" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="600" fill="#64748b" text-anchor="middle">Hình ảnh đang cập nhật</text>
+  <text x="400" y="570" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">ChiKoi Shop</text>
+</svg>
