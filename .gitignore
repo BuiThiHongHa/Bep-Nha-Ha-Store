@@ -1,0 +1,18 @@
+.idea
+composer.lock
+.vscode
+vendor
+.gitignore
+.DS_Store
+*.log
+docker/certs
+docker/logs
+.php-cs-fixer.cache
+.env
+
+# Dữ liệu runtime và công cụ cá nhân
+logs/*
+!logs/.htaccess
+!logs/.gitkeep
+.prime-agent/
+.archify/
