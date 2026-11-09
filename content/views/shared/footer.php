@@ -6,38 +6,27 @@
                 <h4>Thông tin</h4>
                                 <hr class="light">
                 <div class="row">
-                    <div class="col-md-3">
-                        <h5><?= $footerMenu[12]['menu_name'] ?></h5>
-                        <ul class="list icons list-unstyled">
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[0]['menu_url'] ?>"><?= $footerMenu[0]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[1]['menu_url'] ?>"><?= $footerMenu[1]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[2]['menu_url'] ?>"><?= $footerMenu[2]['menu_name'] ?></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h5><?= $footerMenu[13]['menu_name'] ?></h5>
-                        <ul class="list icons list-unstyled">
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[3]['menu_url'] ?>"><?= $footerMenu[3]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[4]['menu_url'] ?>"><?= $footerMenu[4]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[5]['menu_url'] ?>"><?= $footerMenu[5]['menu_name'] ?></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h5><?= $footerMenu[14]['menu_name'] ?></h5>
-                        <ul class="list icons list-unstyled">
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[6]['menu_url'] ?>"><?= $footerMenu[6]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[7]['menu_url'] ?>"><?= $footerMenu[7]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[8]['menu_url'] ?>"><?= $footerMenu[8]['menu_name'] ?></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h5><?= $footerMenu[15]['menu_name'] ?></h5>
-                        <ul class="list icons list-unstyled">
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[9]['menu_url'] ?>"><?= $footerMenu[9]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[10]['menu_url'] ?>"><?= $footerMenu[10]['menu_name'] ?></a></li>
-                            <li><i class="fa fa-caret-right"></i> <a href="<?= $footerMenu[11]['menu_url'] ?>"><?= $footerMenu[11]['menu_name'] ?></a></li>
-                        </ul>
-                    </div>
+                    <?php for ($column = 0; $column < 4; $column++): ?>
+                        <?php
+                        $links = array_slice(array_slice($footerMenu, 0, 12), $column * 3, 3);
+                        $heading = $footerMenu[12 + $column]['menu_name'] ?? '';
+                        if (empty($links) && $heading === '') {
+                            continue;
+                        }
+                        ?>
+                        <div class="col-md-3">
+                            <?php if ($heading !== ''): ?>
+                                <h5><?= htmlspecialchars($heading, ENT_QUOTES, 'UTF-8') ?></h5>
+                            <?php endif; ?>
+                            <ul class="list icons list-unstyled">
+                                <?php foreach ($links as $item): ?>
+                                    <li><i class="fa fa-caret-right"></i>
+                                        <a href="<?= htmlspecialchars($item['menu_url'] ?? '', ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($item['menu_name'] ?? '', ENT_QUOTES, 'UTF-8') ?></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endfor; ?>
                 </div>
             </div>
             <div class="col-md-3">
