@@ -1,17 +1,19 @@
-# Dữ liệu demo trên XAMPP
+# Bộ dữ liệu mock ban đầu — XAMPP localhost
 
-Chỉ dùng bộ dữ liệu này trên localhost. Không triển khai các tài khoản có mật khẩu công khai lên Internet.
+Database mới: import db.sql rồi seed_demo.sql.
+Database đã có bảng: sao lưu nếu có dữ liệu tự sửa, rồi import seed_demo.sql; không import lại db.sql.
 
-Database mới: tạo `mini_store_db`, import `db.sql`, rồi import `seed_demo.sql`.
-Database đã tạo bảng: chỉ import lại `seed_demo.sql`. Git pull không tự cập nhật database.
+Seed khôi phục 21 sản phẩm, 3 danh mục, 6 danh mục con, 3 nhóm sản phẩm, 9 tài khoản,
+9 đơn hàng và 23 chi tiết đơn hàng, giỏ hàng, bài viết, phản hồi, bình luận, media,
+menu, slide, thông tin cửa hàng và các bảng dữ liệu mock còn lại từ dump gốc.
+Bản ghi trùng khóa sẽ được cập nhật về dữ liệu mock; không xóa các bản ghi ngoài bộ mẫu.
 
-Tài khoản mẫu (mật khẩu chung `DemoHa2026!`):
-- `admin.demo` — quản trị, đăng nhập tại `/Bep-Nha-Ha-Store/admin.php`.
-- `staff.demo` — nhân viên.
-- `customer.demo` — khách hàng.
+Đăng nhập admin.php: admin / DemoHa2026!
+Nhân viên: moderator / DemoHa2026!
+Khách hàng: user / DemoHa2026!
+Tất cả tài khoản gốc đều được đặt lại mật khẩu thành DemoHa2026! bằng bcrypt.
+Các tài khoản admin.demo/staff.demo/customer.demo từ bản seed trước (nếu đã import) không bị xóa.
 
-Seed bổ sung vai trò, tài khoản, 12 sản phẩm, danh mục, thông tin cửa hàng minh họa, menu và banner.
-Không có tài khoản thật, dữ liệu khách hàng, đơn hàng thật hoặc cấu hình SMTP bí mật.
-Không tự ghi đè tài khoản hay bản ghi đã tồn tại. Nếu đã đổi mật khẩu, import lại không đặt lại mật khẩu.
-Các bản ghi danh mục/sản phẩm dùng ID cố định nên bộ seed dành cho database demo, không dùng để gộp vào dữ liệu thật.
-Thông tin cửa hàng, mức giá, tồn kho và mật khẩu là giá trị minh họa, không phải thông tin kinh doanh thực.
+Không dùng trên Internet. Email/địa chỉ/số điện thoại, session và mã xác minh đã đổi sang dữ liệu demo.
+Không phục hồi mật khẩu cũ, SMTP password hoặc API key.
+Lệnh bổ sung cột dùng cú pháp MariaDB ADD COLUMN IF NOT EXISTS (XAMPP).
