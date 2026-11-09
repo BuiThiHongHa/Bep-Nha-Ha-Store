@@ -22,10 +22,6 @@ Website chính dùng **MySQLi**, không phải PDO. Có tổ chức thư mục M
 
 Cần hoàn thiện transaction/khóa tồn kho, quyền sở hữu đơn, phân quyền từng action, quy trình reset mật khẩu, lọc khoảng giá và SQL khôi phục đúng phiên bản. Không coi các chức năng này là đã nghiệm thu.
 
-## Bản nộp public
-
-Repo này là bản source xuất từ dự án để nộp bài, không sao chép lịch sử cũ có cấu hình nhạy cảm. Các commit được chia theo nhóm tệp với thời gian xuất bản thực tế, không đại diện cho ngày phát triển từng chức năng. SQL chỉ giữ cấu trúc bảng, đã loại dữ liệu tài khoản/khách hàng; cần chuẩn bị dữ liệu thử riêng. Không có `.env`, log runtime hoặc ảnh đại diện cá nhân.
-
 ## Cài đặt local
 
 1. Đặt source trong thư mục htdocs của XAMPP; có thể đặt tên `online-shop-mini` hoặc cấu hình alias/symlink tương ứng.
