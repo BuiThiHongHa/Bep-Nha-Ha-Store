@@ -8,6 +8,10 @@ $ccategories = getAll('categories', $options);
 $contact_option = [
     'where' => 'id=1',
 ];
+$phone = $phone2 = $contactUrl = $contactEmail = $contactFacebook = $contactTwitter = '';
+$contactAddress = $contactZalo = $contactLinkedin = $aboutUrl = $aboutFooter = '';
+$linkLogo = 'logo-bep-nha-ha.png';
+$favicon = 'logo-bep-nha-ha.png';
 $contacts = getAll('contacts', $contact_option);
 foreach ($contacts as $contact) {
     $phone = preg_replace("/([0-9]{3})([0-9]{4})/", "$1-$2", $contact['phone']);

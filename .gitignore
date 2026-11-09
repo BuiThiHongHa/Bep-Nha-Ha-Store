@@ -1,7 +1,7 @@
 .idea
 composer.lock
 .vscode
-vendor
+/vendor/
 .gitignore
 .DS_Store
 *.log
