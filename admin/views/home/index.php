@@ -136,7 +136,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-assignment"></i> Đơn hàng mới</td>
-                                                    <td><?= getTime($order_new['createtime'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($order_new['createtime']) ? getTime($order_new['createtime'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-assignment-alert"></i> Đơn chưa xử lý</td>
@@ -152,7 +152,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-comment-alt-text"></i> Bình luận mới</td>
-                                                    <td><?= getTime($comment_new['createDate'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($comment_new['createDate']) ? getTime($comment_new['createDate'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-comment-alert"></i> BLuận Chưa Xử lý</td>
@@ -160,7 +160,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-email-open"></i> Phản hồi mới</td>
-                                                    <td><?= getTime($feedback_new['createTime'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($feedback_new['createTime']) ? getTime($feedback_new['createTime'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-email"></i> Phản hồi Chưa Xử lý</td>
@@ -168,7 +168,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-reader"></i> Trang mới</td>
-                                                    <td><?= getTime($page_new['post_date'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($page_new['post_date']) ? getTime($page_new['post_date'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-tab"></i> Trang nháp</td>
@@ -176,7 +176,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-receipt"></i> Bài viết mới</td>
-                                                    <td><?= getTime($post_new['post_date'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($post_new['post_date']) ? getTime($post_new['post_date'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-assignment-o"></i> Bài viết nháp</td>
@@ -377,7 +377,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-case-check"></i> Sản phẩm mới cập nhật</td>
-                                                    <td><?= getTime($product_update['editDate'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) ?></td>
+                                                    <td><?= (!empty($product_update['editDate']) ? getTime($product_update['editDate'], gmdate('Y:m:d H:i:s', time() + 7 * 3600)) : 'Chưa có dữ liệu') ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="zmdi zmdi-account-add"></i> Người dùng mới</td>
