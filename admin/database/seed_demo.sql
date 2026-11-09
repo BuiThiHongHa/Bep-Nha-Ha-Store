@@ -83,3 +83,107 @@ WHERE NOT EXISTS (SELECT 1 FROM `products` WHERE `id` = 11);
 INSERT INTO `products` (`id`, `product_name`, `product_typeid`, `category_id`, `sub_category_id`, `supply_id`, `product_description`, `product_detail`, `product_price`, `total_stock`, `saleoff`, `percentoff`, `img1`, `img2`, `img3`, `img4`, `slug`, `createBy`, `createDate`)
 SELECT 12, 'Trà tắc', 3, 2, 2, 1, 'Trà tắc — sản phẩm mẫu dùng để thực hành.', 'Thông tin và giá minh họa cho bài tập.', 12000, 20, 1, 10, 'tra-tac---giai-khat--thanh-loc-co-the--khong-beo-31img1.jpg', 'tra-tac---giai-khat--thanh-loc-co-the--khong-beo-31img1.jpg', 'tra-tac---giai-khat--thanh-loc-co-the--khong-beo-31img1.jpg', 'tra-tac---giai-khat--thanh-loc-co-the--khong-beo-31img1.jpg', 'tra-tac', 'Demo', '2026-11-09'
 WHERE NOT EXISTS (SELECT 1 FROM `products` WHERE `id` = 12);
+
+-- Public LOCAL DEMO credentials only. Never deploy these accounts to an Internet-facing server.
+-- admin.demo / staff.demo / customer.demo : DemoHa2026!
+
+SET @demo_old_sql_mode = @@SESSION.sql_mode;
+SET SESSION sql_mode = CONCAT_WS(',', @@SESSION.sql_mode, 'NO_AUTO_VALUE_ON_ZERO');
+
+INSERT INTO `roles` (`id`, `role_name`, `role_desc`)
+SELECT 0, 'Khách hàng', 'Vai trò demo'
+WHERE NOT EXISTS (SELECT 1 FROM `roles` WHERE `id` = 0);
+
+INSERT INTO `roles` (`id`, `role_name`, `role_desc`)
+SELECT 1, 'Quản trị viên', 'Vai trò demo'
+WHERE NOT EXISTS (SELECT 1 FROM `roles` WHERE `id` = 1);
+
+INSERT INTO `roles` (`id`, `role_name`, `role_desc`)
+SELECT 2, 'Nhân viên', 'Vai trò demo'
+WHERE NOT EXISTS (SELECT 1 FROM `roles` WHERE `id` = 2);
+
+INSERT INTO users (`user_username`, `user_password`, `user_name`, `role_id`, `user_avatar`, `user_email`, `user_phone`, `user_address`, `verified`)
+SELECT 'admin.demo', '$2y$10$eKiyaempBEgyNe2mYb1Mcea6tBOobrNGSD2lgE6uooty74LMPoYyS', 'Quản trị demo', 1, 'author-auto.png', 'admin.demo@example.com', '', 'Dữ liệu minh họa', 1
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_username = 'admin.demo' OR user_email = 'admin.demo@example.com');
+
+INSERT INTO users (`user_username`, `user_password`, `user_name`, `role_id`, `user_avatar`, `user_email`, `user_phone`, `user_address`, `verified`)
+SELECT 'staff.demo', '$2y$10$eKiyaempBEgyNe2mYb1Mcea6tBOobrNGSD2lgE6uooty74LMPoYyS', 'Nhân viên demo', 2, 'author-auto.png', 'staff.demo@example.com', '', 'Dữ liệu minh họa', 1
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_username = 'staff.demo' OR user_email = 'staff.demo@example.com');
+
+INSERT INTO users (`user_username`, `user_password`, `user_name`, `role_id`, `user_avatar`, `user_email`, `user_phone`, `user_address`, `verified`)
+SELECT 'customer.demo', '$2y$10$eKiyaempBEgyNe2mYb1Mcea6tBOobrNGSD2lgE6uooty74LMPoYyS', 'Khách hàng demo', 0, 'author-auto.png', 'customer.demo@example.com', '', 'Dữ liệu minh họa', 1
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE user_username = 'customer.demo' OR user_email = 'customer.demo@example.com');
+
+INSERT INTO `contacts` (`id`, `link_Logo`, `contact_name`, `address`, `country`, `phone`, `phone_2`, `email`, `link_Contact`, `link_Facebook`, `link_Twitter`, `link_linkedin`, `zalo`, `link_about`, `about_footer`, `favicon`)
+SELECT 1, 'logo-bep-nha-ha.png', 'Bếp Nhà Hà Store', 'Địa chỉ cửa hàng demo — cập nhật trong quản trị', 'Việt Nam', '', '', 'store@example.com', 'feedback/', '', '', '', '', 'home/', 'Website thực hành bán đồ ăn vặt và đồ uống.', 'logo-bep-nha-ha.png'
+WHERE NOT EXISTS (SELECT 1 FROM `contacts` WHERE `id` = 1);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 1, 'Trang chủ', 'home/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 1);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 2, 'Tất cả sản phẩm', 'shop/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 2);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 3, 'Sản phẩm nổi bật', 'type/1-san-pham-hot', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 3);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 4, 'Sản phẩm mới', 'type/2-san-pham-moi', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 4);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 5, 'Sản phẩm giảm giá', 'type/3-san-pham-giam-gia', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 5);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 6, 'Đồ ăn vặt', 'category/1-do-an-vat', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 6);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 7, 'Đồ uống', 'category/2-do-uong', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 7);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 8, 'Giỏ hàng', 'cart/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 8);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 9, 'Đăng ký', 'register/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 9);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 10, 'Quản trị', 'admin.php', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 10);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 11, 'Gửi phản hồi', 'feedback/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 11);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 12, 'Tìm sản phẩm', 'search/', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 12);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 13, 'Khám phá', '#', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 13);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 14, 'Danh mục', '#', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 14);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 15, 'Mua hàng', '#', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 15);
+
+INSERT INTO `menu_footers` (`id`, `menu_name`, `menu_url`, `menu_description`, `parent`)
+SELECT 16, 'Tài khoản', '#', 'Menu mẫu', 0
+WHERE NOT EXISTS (SELECT 1 FROM `menu_footers` WHERE `id` = 16);
+
+INSERT INTO `slides` (`id`, `slide_name`, `status`, `slide_img1`, `slide_text1`, `slide_img2`, `slide_text2`, `slide_img3`, `slide_text3`, `slide_img4`, `slide_text4`, `slide_img5`, `slide_text5`)
+SELECT 1, 'Banner cửa hàng demo', 1, 'image1-1-homepage-1.jpg', 'Món ngon mỗi ngày — Bếp Nhà Hà Store', 'image2-1-homepage-1.jpg', 'Món ngon mỗi ngày — Bếp Nhà Hà Store', 'image3-1-homepage-1.jpg', 'Món ngon mỗi ngày — Bếp Nhà Hà Store', 'image1-3-homepage-1.jpg', 'Món ngon mỗi ngày — Bếp Nhà Hà Store', 'image1-1-homepage-1.jpg', 'Món ngon mỗi ngày — Bếp Nhà Hà Store'
+WHERE NOT EXISTS (SELECT 1 FROM `slides` WHERE `id` = 1);
+
+SET SESSION sql_mode = @demo_old_sql_mode;
